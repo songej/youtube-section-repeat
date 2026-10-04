@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy – Section Repeat for YouTube</title>
+<meta name="description" content="How Section Repeat for YouTube handles your data: everything stays in your browser.">
+<link rel="canonical" href="https://sectionrepeat.com/privacy/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Section Repeat for YouTube™">
+<meta property="og:title" content="Privacy policy – Section Repeat for YouTube">
+<meta property="og:description" content="How Section Repeat for YouTube handles your data: everything stays in your browser.">
+<meta property="og:url" content="https://sectionrepeat.com/privacy/">
+<meta property="og:image" content="https://sectionrepeat.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Section Repeat">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="wrap site-header">
+  <a class="brand" href="/"><img src="/favicon.svg" alt="" width="28" height="28">Section Repeat</a>
+  <nav aria-label="Site">
+    <a href="/release-notes/">Release notes</a>
+    <a href="/privacy/" aria-current="page">Privacy</a>
+  </nav>
+</header>
+<main id="content" class="wrap prose">
+<h1>Privacy policy</h1>
+<p class="meta">Last updated: October 4, 2026</p>
+<h2>In short</h2>
+<p>Section Repeat for YouTube™ works locally in Chrome. It has no account, analytics, advertising, or developer-operated server. The extension locally processes only the current supported YouTube page/player information and the section data you create so it can save and repeat those sections. The developer receives none of this data and does not sell or share it.</p>
+<h2>Data the extension handles locally</h2>
+<ul>
+  <li><strong>Web browsing data handled locally:</strong> the current supported YouTube URL and video identifier are used only to associate your saved sections with that video. Persistent video records use a salted SHA-256 hash rather than the plain video ID.</li>
+  <li><strong>Website content handled locally:</strong> the extension reads only the YouTube player/DOM state needed for section timing, playback control, and chapter import. It does not read video pixels, audio, comments, messages, passwords, cookies, or form contents.</li>
+  <li><strong>Your section data:</strong> section names, start/end times, playback speed, repeat count, rest time, and related practice settings that you create in the extension.</li>
+  <li><strong>Direct controls:</strong> keyboard and pointer input is handled transiently to perform the command you requested. It is not kept as activity history, transmitted, or used for profiling.</li>
+</ul>
+<h2>What the extension stores</h2>
+<ul>
+  <li><strong>Your sections and settings:</strong> in <code>chrome.storage.local</code>. Each video's record is keyed by a SHA-256 hash of its video ID and a random salt made for your browser profile, not by the plain video ID.</li>
+  <li><strong>The salt:</strong> in <code>chrome.storage.local</code>. For compatibility only, a profile without one can read the salt an older version kept in Chrome Sync so earlier sections stay reachable. The current extension writes nothing new to Chrome Sync.</li>
+  <li><strong>Temporary state:</strong> such as the repeat in progress and recovery data, in <code>chrome.storage.session</code>.</li>
+</ul>
+<p>In an incognito window, sections last only for that incognito session, and backup and restore are disabled.</p>
+<h2>Backup and restore</h2>
+<p>From the toolbar popup you can save your section library to a file and restore it later. The file is created and read on your computer; it is not uploaded. A backup contains the salt and hashed records needed to restore your library, so keep the file private.</p>
+<h2>Network and tracking</h2>
+<p>The extension does not send section data, browsing data, player data, or user input to the developer or any third party. It contains no analytics, advertising trackers, telemetry, remote configuration, or network client for user data. Its executable logic is packaged with the extension; it does not load or execute remotely hosted code.</p>
+<h2>Permissions</h2>
+<ul>
+  <li><strong>YouTube and YouTube NoCookie host access:</strong> only to run the section-repeat UI and behavior on the supported YouTube player pages.</li>
+  <li><code>storage</code>: to keep your section library, settings, recovery metadata, and temporary extension state.</li>
+  <li><code>alarms</code>: to schedule local storage maintenance and retries needed to keep saved section data reliable across Manifest V3 service-worker suspension.</li>
+</ul>
+<p>These permissions are not used for advertising, analytics, tracking across sites, or unrelated purposes.</p>
+<h2>Chrome Web Store Limited Use</h2>
+<p>Section Repeat for YouTube™ complies with the Chrome Web Store User Data Policy, including the Limited Use requirements. User data is used only to provide and maintain the extension's single purpose: marking, saving, and repeatedly practising selected sections of YouTube videos. User data is not sold, transferred for unrelated purposes, used for personalized advertising, used to determine creditworthiness, or used to train a general-purpose AI model. Humans do not read extension-handled user data because the extension does not transmit it to the developer or a third party.</p>
+<h2>Retention and deletion</h2>
+<p>Saved sections remain in Chrome storage until you delete them, storage maintenance removes older records when space is low, or you uninstall the extension. Temporary session state expires with the Chrome session or is cleared when it is no longer needed. You can delete individual sections in the player panel, delete all sections for a video, or remove the extension to remove its extension storage as Chrome handles uninstall cleanup.</p>
+<h2>Security</h2>
+<p>Hashing video IDs keeps them from being readable at a glance in extension storage. It is not anonymity against someone who already has access to your Chrome profile or a backup file. No user data is transmitted by the extension, so there is no developer-side user-data store to secure or retain.</p>
+<h2>Google services</h2>
+<p>Your use of YouTube and Chrome is covered by Google's own <a href="https://policies.google.com/privacy" rel="noopener">Privacy Policy</a> and the <a href="https://www.youtube.com/t/terms" rel="noopener">YouTube Terms of Service</a>.</p>
+<h2>Changes and contact</h2>
+<p>This policy is updated when the extension's data handling changes. Questions go through the <a href="https://tally.so/r/mDLBkj" rel="noopener">contact form</a>.</p>
+</main>
+<footer class="wrap site-footer">
+  <p class="links">
+    <a href="https://chromewebstore.google.com/detail/section-repeat-for-youtub/pppgnfkfeciopablcbkjdohiknebahkc">Chrome Web Store</a>
+    <a href="/release-notes/">Release notes</a>
+    <a href="/privacy/">Privacy policy</a>
+    <a href="https://tally.so/r/mDLBkj">Contact</a>
+  </p>
+  <p class="fine">Made by <a href="https://songej.com">Eunjeong Song</a>. Section Repeat for YouTube&trade; is an independent project, not affiliated with or endorsed by YouTube or Google LLC. YouTube and Chrome are trademarks of Google LLC. Icon by <a href="https://www.iconfinder.com/iconfinder/khulqi-rosyid">khulqi Rosyid</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+</footer>
+</body>
+</html>

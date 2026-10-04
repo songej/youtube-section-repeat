@@ -1,0 +1,103 @@
+/* sectionrepeat.com - one stylesheet, system fonts, no scripts. */
+:root {
+  color-scheme: light dark;
+  --paper: #ffffff;
+  --ink: #0f0f0f;
+  --muted: #5f5f5f;
+  --rule: #e5e5e5;
+  --track: #e5e5e5;
+  --red: #ff0000;
+  /* The UI red the extension's own pages use (brand/README.md). */
+  --button: #d93025;
+  --button-hover: #b3261e;
+  --key: #ffffff;
+  --key-edge: #cfcfcf;
+  /* The extension's own section colors (Okabe-Ito). */
+  --c1: #e69f00;
+  --c2: #56b4e9;
+  --c3: #009e73;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0f0f0f;
+    --ink: #f1f1f1;
+    --muted: #aaaaaa;
+    --rule: #2e2e2e;
+    --track: #3a3a3a;
+    --key: #1f1f1f;
+    --key-edge: #474747;
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-size: 1.125rem; line-height: 1.6; }
+.wrap { max-width: 42rem; margin-inline: auto; padding-inline: 1.25rem; }
+a { color: inherit; text-decoration-color: var(--muted); text-underline-offset: 0.2em; }
+a:hover { text-decoration-color: currentColor; }
+:focus-visible { outline: 2px solid #1a73e8; outline-offset: 2px; border-radius: 2px; }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 1rem; top: 1rem; padding: 0.5rem 1rem; background: var(--paper); }
+
+.site-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.25rem; }
+.brand { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; text-decoration: none; }
+.site-header nav { display: flex; gap: 1.25rem; font-size: 1rem; }
+.site-header nav a { color: var(--muted); text-decoration: none; }
+.brand, .site-header nav a { white-space: nowrap; }
+.site-header nav a:hover, .site-header nav a[aria-current="page"] { color: var(--ink); }
+
+h1 { margin: 2.5rem 0 1rem; font-size: clamp(2rem, 6vw, 2.75rem); line-height: 1.15; letter-spacing: -0.02em; }
+h2 { margin: 3rem 0 0.75rem; font-size: 1.25rem; line-height: 1.3; }
+.prose h1 { font-size: 2rem; }
+.lead { margin: 0 0 1.5rem; font-size: 1.25rem; color: var(--muted); }
+.meta, .note, .release-date { color: var(--muted); font-size: 1rem; }
+.release h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.45rem 0.7rem; }
+
+kbd {
+  display: inline-block;
+  min-width: 1.8em;
+  padding: 0.05em 0.45em;
+  font: 600 0.85em/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
+  text-align: center;
+  color: var(--ink);
+  background: var(--key);
+  border: 1px solid var(--key-edge);
+  border-bottom-width: 2px;
+  border-radius: 0.35em;
+}
+code { font: 0.9em ui-monospace, SFMono-Regular, Consolas, monospace; }
+
+.get { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem; }
+.button { display: inline-block; padding: 0.75rem 1.5rem; font-weight: 600; color: #ffffff; text-decoration: none; background: var(--button); border-radius: 999px; }
+.button:hover { background: var(--button-hover); }
+.get-note { font-size: 1rem; color: var(--muted); }
+
+/* The product in one look: a progress bar, a marked part, the keys that made it. */
+.demo { position: relative; margin: 2.5rem 0 1rem; padding-block: 2.5rem; }
+.bar { position: relative; height: 6px; background: var(--track); border-radius: 3px; }
+.sec { position: absolute; inset-block: 0; left: var(--from); width: calc(var(--to) - var(--from)); background: var(--c); border-radius: 3px; opacity: 0.55; }
+.sec.is-active { opacity: 1; }
+.head { position: absolute; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; background: var(--red); border-radius: 50%; animation: play 3s linear infinite; }
+@keyframes play { from { left: 0; } to { left: 100%; } }
+.cue { position: absolute; left: var(--at); transform: translateX(-50%); font-size: 0.8rem; }
+.cue.above { top: 0; }
+.cue.below { bottom: 0; }
+
+.keys { display: grid; grid-template-columns: max-content 1fr; gap: 0.6rem 1.25rem; margin: 0; }
+.keys dt { white-space: nowrap; }
+.keys dd { margin: 0; }
+.facts, .prose ul { padding-left: 1.2rem; }
+.facts li + li, .prose li + li { margin-top: 0.4rem; }
+
+.site-footer { margin-top: 4rem; padding-block: 2rem 3rem; font-size: 0.95rem; color: var(--muted); border-top: 1px solid var(--rule); }
+.links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
+.fine { font-size: 0.85rem; }
+
+@media (max-width: 420px) {
+  .site-header nav { gap: 0.9rem; font-size: 0.95rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .head { left: 45%; animation: none; }
+}

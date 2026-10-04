@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Release notes - Section Repeat for YouTube</title>
+<meta name="description" content="User-facing release notes for Section Repeat for YouTube.">
+<link rel="canonical" href="https://sectionrepeat.com/release-notes/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Section Repeat for YouTube™">
+<meta property="og:title" content="Release notes - Section Repeat for YouTube">
+<meta property="og:description" content="User-facing release notes for Section Repeat for YouTube.">
+<meta property="og:url" content="https://sectionrepeat.com/release-notes/">
+<meta property="og:image" content="https://sectionrepeat.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Section Repeat">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="wrap site-header">
+  <a class="brand" href="/"><img src="/favicon.svg" alt="" width="28" height="28">Section Repeat</a>
+  <nav aria-label="Site">
+    <a href="/release-notes/" aria-current="page">Release notes</a>
+    <a href="/privacy/">Privacy</a>
+  </nav>
+</header>
+<main id="content" class="wrap prose release">
+<h1>Release notes</h1>
+
+<h2 id="v2-0-0"><span>2.0.0</span> <time class="release-date" datetime="2026-10-03">October 3, 2026</time></h2>
+<ul>
+  <li>The welcome page now shows the three keys that make a loop: S, E and R.</li>
+  <li>The player panel keeps actions in consistent positions with their shortcuts. Text is easier to read, speed reset and delete-all labels are clearer, unavailable actions are dimmed instead of disappearing, and Clear all still requires a second press.</li>
+  <li>The first-use guide now shows that pressing E again marks the next section.</li>
+  <li>W is now called focus mode: it leaves the playlist and keeps attention on the video.</li>
+  <li>Backup restore opens in its own tab so the file picker cannot close it.</li>
+  <li>Repeat state is preserved more reliably if Chrome suspends the extension during an update.</li>
+  <li>Unexpected browser startup or maintenance-alarm errors are now contained so one failed event does not destabilize the service worker.</li>
+  <li>Fixed undo after a second delete, saved speed after reload, leftover chapters from another video, description timestamps that do not meet YouTube's chapter rules, typed end times past the video, and several unclear error messages.</li>
+</ul>
+</main>
+<footer class="wrap site-footer">
+  <p class="links">
+    <a href="https://chromewebstore.google.com/detail/section-repeat-for-youtub/pppgnfkfeciopablcbkjdohiknebahkc">Chrome Web Store</a>
+    <a href="/release-notes/">Release notes</a>
+    <a href="/privacy/">Privacy policy</a>
+    <a href="https://tally.so/r/mDLBkj">Contact</a>
+  </p>
+  <p class="fine">Made by <a href="https://songej.com">Eunjeong Song</a>. Section Repeat for YouTube&trade; is an independent project, not affiliated with or endorsed by YouTube or Google LLC. YouTube and Chrome are trademarks of Google LLC. Icon by <a href="https://www.iconfinder.com/iconfinder/khulqi-rosyid">khulqi Rosyid</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+</footer>
+</body>
+</html>
