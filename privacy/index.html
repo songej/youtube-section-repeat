@@ -35,44 +35,56 @@
 </header>
 <main id="content" class="wrap prose">
 <h1>Privacy policy</h1>
-<p class="meta">Last updated: October 4, 2026</p>
+<p class="meta">Last updated: October 5, 2026</p>
+<p>This policy covers the Section Repeat for YouTube™ Chrome extension (&quot;the extension&quot;) and this website, both run by Eunjeong Song (&quot;the developer&quot;).</p>
 <h2>In short</h2>
-<p>Section Repeat for YouTube™ works locally in Chrome. It has no account, analytics, advertising, or developer-operated server. The extension locally processes only the current supported YouTube page/player information and the section data you create so it can save and repeat those sections. The developer receives none of this data and does not sell or share it.</p>
+<ul>
+  <li>Everything the extension handles - the YouTube page you are on and the sections you make - stays on your device.</li>
+  <li>The developer receives none of this data and does not sell or share it. There is no account, analytics, advertising, tracking, or developer server.</li>
+  <li>The developer receives personal data only if you write through the contact form.</li>
+</ul>
 <h2>Data the extension handles locally</h2>
 <ul>
-  <li><strong>Web browsing data handled locally:</strong> the current supported YouTube URL and video identifier are used only to associate your saved sections with that video. Persistent video records use a salted SHA-256 hash rather than the plain video ID.</li>
-  <li><strong>Website content handled locally:</strong> the extension reads only the YouTube player/DOM state needed for section timing, playback control, and chapter import. It does not read video pixels, audio, comments, messages, passwords, cookies, or form contents.</li>
-  <li><strong>Your section data:</strong> section names, start/end times, playback speed, repeat count, rest time, and related practice settings that you create in the extension.</li>
-  <li><strong>Direct controls:</strong> keyboard and pointer input is handled transiently to perform the command you requested. It is not kept as activity history, transmitted, or used for profiling.</li>
+  <li><strong>Web browsing data handled locally:</strong> the address and video ID of the YouTube page you are on, used only to link your sections to that video.</li>
+  <li><strong>Website content handled locally:</strong> the YouTube player's state (time, length, speed, ad and live status) and, when you import chapters, the video's chapter list or description timestamps. Never video or audio content, comments, messages, passwords, cookies, or form entries.</li>
+  <li><strong>Your section data:</strong> the names, times, and speeds of your sections, and practice settings such as repeat count and rest time.</li>
+  <li><strong>Input:</strong> key presses and clicks are used only to run the command you give; they are not stored or sent.</li>
 </ul>
 <h2>What the extension stores</h2>
 <ul>
-  <li><strong>Your sections and settings:</strong> in <code>chrome.storage.local</code>. Each video's record is keyed by a SHA-256 hash of its video ID and a random salt made for your browser profile, not by the plain video ID.</li>
-  <li><strong>The salt:</strong> in <code>chrome.storage.local</code>. For compatibility only, a profile without one can read the salt an older version kept in Chrome Sync so earlier sections stay reachable. The current extension writes nothing new to Chrome Sync.</li>
-  <li><strong>Temporary state:</strong> such as the repeat in progress and recovery data, in <code>chrome.storage.session</code>.</li>
+  <li><strong>On your device, until deleted</strong> (<code>chrome.storage.local</code>): your sections, filed per video under a salted SHA-256 hash of the video ID; the random salt made for your Chrome profile; when each video's sections were last edited or opened, used only for the cleanup below; and your first-use tip progress. Practice settings are not saved.</li>
+  <li><strong>Until Chrome closes</strong> (<code>chrome.storage.session</code>): temporary state, such as the section repeating in each tab with that tab's YouTube address and video ID, and saves waiting for storage space.</li>
+  <li><strong>Chrome Sync:</strong> a salt that older versions kept there is read once for compatibility; nothing is written to it.</li>
+  <li><strong>Incognito:</strong> sections are kept only while the page is open, and backup and restore are off.</li>
 </ul>
-<p>In an incognito window, sections last only for that incognito session, and backup and restore are disabled.</p>
-<h2>Backup and restore</h2>
-<p>From the toolbar popup you can save your section library to a file and restore it later. The file is created and read on your computer; it is not uploaded. A backup contains the salt and hashed records needed to restore your library, so keep the file private.</p>
+<p>Hashing hides video IDs from casual view, not from someone with access to your Chrome profile or a backup file.</p>
+<h2>Backup files</h2>
+<p>Backup and restore, in the toolbar popup, write and read a file on your computer; nothing is uploaded. The file holds your sections and the salt, so anyone with it can restore your library: keep it private. It stays until you delete it.</p>
 <h2>Network and tracking</h2>
-<p>The extension does not send section data, browsing data, player data, or user input to the developer or any third party. It contains no analytics, advertising trackers, telemetry, remote configuration, or network client for user data. Its executable logic is packaged with the extension; it does not load or execute remotely hosted code.</p>
+<p>The extension sends no section, browsing, player, or input data to the developer or any third party, and it loads no remote code. This website uses no cookies, analytics, or tracking scripts; its host, GitHub Pages, may log visitors' IP addresses for security.</p>
 <h2>Permissions</h2>
 <ul>
-  <li><strong>YouTube and YouTube NoCookie host access:</strong> only to run the section-repeat UI and behavior on the supported YouTube player pages.</li>
-  <li><code>storage</code>: to keep your section library, settings, recovery metadata, and temporary extension state.</li>
-  <li><code>alarms</code>: to schedule local storage maintenance and retries needed to keep saved section data reliable across Manifest V3 service-worker suspension.</li>
+  <li><strong>Host access to <code>youtube.com</code> and <code>youtube-nocookie.com</code> (HTTPS only):</strong> to add section controls to the YouTube player and repeat your sections.</li>
+  <li><code>storage</code>: to keep the data listed above on your device.</li>
+  <li><code>alarms</code>: to schedule local storage maintenance and retries of failed saves.</li>
 </ul>
-<p>These permissions are not used for advertising, analytics, tracking across sites, or unrelated purposes.</p>
+<p>They are not used for advertising, analytics, tracking, or any unrelated purpose.</p>
 <h2>Chrome Web Store Limited Use</h2>
-<p>Section Repeat for YouTube™ complies with the Chrome Web Store User Data Policy, including the Limited Use requirements. User data is used only to provide and maintain the extension's single purpose: marking, saving, and repeatedly practising selected sections of YouTube videos. User data is not sold, transferred for unrelated purposes, used for personalized advertising, used to determine creditworthiness, or used to train a general-purpose AI model. Humans do not read extension-handled user data because the extension does not transmit it to the developer or a third party.</p>
+<p>The extension complies with the Chrome Web Store User Data Policy, including the Limited Use requirements. User data is used only for its single purpose - marking, saving, and repeating sections of YouTube videos - and is not sold, transferred for unrelated purposes, used for personalized advertising or to determine creditworthiness, or used to train a general-purpose AI model. No human reads it, because it never leaves your device.</p>
 <h2>Retention and deletion</h2>
-<p>Saved sections remain in Chrome storage until you delete them, storage maintenance removes older records when space is low, or you uninstall the extension. Temporary session state expires with the Chrome session or is cleared when it is no longer needed. You can delete individual sections in the player panel, delete all sections for a video, or remove the extension to remove its extension storage as Chrome handles uninstall cleanup.</p>
-<h2>Security</h2>
-<p>Hashing video IDs keeps them from being readable at a glance in extension storage. It is not anonymity against someone who already has access to your Chrome profile or a backup file. No user data is transmitted by the extension, so there is no developer-side user-data store to secure or retain.</p>
-<h2>Google services</h2>
-<p>Your use of YouTube and Chrome is covered by Google's own <a href="https://policies.google.com/privacy" rel="noopener">Privacy Policy</a> and the <a href="https://www.youtube.com/t/terms" rel="noopener">YouTube Terms of Service</a>.</p>
-<h2>Changes and contact</h2>
-<p>This policy is updated when the extension's data handling changes. Questions go through the <a href="https://tally.so/r/mDLBkj" rel="noopener">contact form</a>.</p>
+<ul>
+  <li>Your data stays on your device until you delete a section or a video's sections in the player panel, or uninstall the extension, which makes Chrome delete its storage.</li>
+  <li>A video keeps at most 50 sections; marking more removes the one marked longest ago.</li>
+  <li>When the extension's storage is nearly full, it deletes the data of the videos unused the longest, starting with those untouched for 30 days.</li>
+</ul>
+<h2>Contact form</h2>
+<p>If you use the <a href="https://tally.so/r/mDLBkj" rel="noopener">contact form</a>, the developer receives what you enter, such as your email address and message, and uses it only to answer you. It is processed for the developer by the form provider Tally BV (Belgium) and stored in the EU. It is deleted once your question is resolved, unless the law requires keeping it.</p>
+<h2>Your rights</h2>
+<p>Extension data never leaves your device, so you can view, export, and delete it yourself at any time. For data the developer holds, such as contact messages, you can ask through the contact form to access, correct, or delete it, and you may complain to your data protection authority.</p>
+<h2>Children</h2>
+<p>The extension is not directed to children under 13, and the developer does not knowingly receive their personal data.</p>
+<h2>Changes</h2>
+<p>Changes are posted here with a new date, and material ones are also noted in the release notes. Your use of YouTube and Chrome is governed by Google's <a href="https://policies.google.com/privacy" rel="noopener">Privacy Policy</a> and the <a href="https://www.youtube.com/t/terms" rel="noopener">YouTube Terms of Service</a>.</p>
 </main>
 <footer class="wrap site-footer">
   <p class="links">

@@ -38,14 +38,15 @@
 
 <h2 id="v2-0-0"><span>2.0.0</span> <time class="release-date" datetime="2026-10-03">October 3, 2026</time></h2>
 <ul>
-  <li>The welcome page now shows the three keys that make a loop: S, E and R.</li>
-  <li>The player panel keeps actions in consistent positions with their shortcuts. Text is easier to read, speed reset and delete-all labels are clearer, unavailable actions are dimmed instead of disappearing, and Clear all still requires a second press.</li>
-  <li>The first-use guide now shows that pressing E again marks the next section.</li>
-  <li>W is now called focus mode: it leaves the playlist and keeps attention on the video.</li>
-  <li>Backup restore opens in its own tab so the file picker cannot close it.</li>
-  <li>Repeat state is preserved more reliably if Chrome suspends the extension during an update.</li>
-  <li>Unexpected browser startup or maintenance-alarm errors are now contained so one failed event does not destabilize the service worker.</li>
-  <li>Fixed undo after a second delete, saved speed after reload, leftover chapters from another video, description timestamps that do not meet YouTube's chapter rules, typed end times past the video, and several unclear error messages.</li>
+  <li>A player panel, opened from a button in YouTube's player controls, holds every action with its key and this video's sections: rename them, type exact times, jump to one or delete it.</li>
+  <li>Fine-tune a section: drag its edges on the progress bar, or hold S or E and press ← or → to move that edge by 0.1 s.</li>
+  <li>X deletes the section you are on, and Z brings it back.</li>
+  <li>Each section keeps its own playback speed.</li>
+  <li>Practice tools: repeat each section a set number of times with a rest or get-ready time between repeats, raise a slow section's speed step by step, and mirror the picture.</li>
+  <li>Import a video's chapters as sections in one click.</li>
+  <li>A welcome page and first-use tips in the player show S, E and R; W is now called focus mode.</li>
+  <li>Restore a backup in its own tab, answer the clear prompt with a quick double-tap of Q, and use the extension in Malay and Bengali.</li>
+  <li>Send feedback from the bottom of the toolbar popup.</li>
 </ul>
 </main>
 <footer class="wrap site-footer">
